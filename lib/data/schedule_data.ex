@@ -1,6 +1,6 @@
 defmodule MarvelSchedule.ScheduleData do
-  @data_reader MarvelSchedule.DataReader
-#  @data_reader Application.get_env(:marvel_schedule, :schedule_data)
+#  @data_reader MarvelSchedule.DataReader
+  @data_reader Application.get_env(:marvel_schedule, :data_reader)
 
   NimbleCSV.define(LocalParser, separator: ",", escape: "\"")
 
