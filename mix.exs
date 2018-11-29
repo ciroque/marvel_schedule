@@ -22,7 +22,8 @@ defmodule MarvelSchedule.MixProject do
   defp deps do
     [
       {:nimble_csv, "~> 0.4.0"},
-      {:timex, "~> 3.4"}
+      {:timex, "~> 3.4"},
+      {:uuid, "~> 1.1"}
     ]
   end
 end

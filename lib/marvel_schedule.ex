@@ -15,12 +15,12 @@ defmodule MarvelSchedule do
 
   defp calculate_with_date(list, target_date) do
   {:ok, date} = Timex.parse(target_date, "{YYYY}-{0M}-{D}")
-    list
-    |> Enum.map_reduce(date, fn entry, date -> compose_schedule_entry(entry, date) end)
+  list
+  |> Enum.map_reduce(date, fn entry, date -> compose_schedule_entry(entry, date) end)
   end
 
   defp compose_schedule_entry(entry, date) do
-    {:ok, viewing_date} = Timex.format(date, "{YYYY}-{0M}-{D}")
+    {:ok, viewing_date} = Timex.format(date, "{YYYY}{0M}{0D}")
     {
       %{
         title: entry.title,

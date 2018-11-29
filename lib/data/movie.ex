@@ -2,13 +2,13 @@ defmodule MarvelSchedule.Movie do
   @type t :: %__MODULE__{
     title: String.t(),
     order: integer,
-    release_date: Timex.DateTime
+    release_date: String.t()
   }
 
   defstruct [
     title: '',
     order: -1,
-    release_date: nil
+    release_date: ''
   ]
 
   def new(title, order, release_date) do
