@@ -10,6 +10,7 @@ defmodule MarvelSchedule do
   defp prepare_list() do
     MarvelSchedule.ScheduleData.data()
     |> Enum.sort_by(&(Integer.parse(&1.order)))
+#    |> Enum.sort_by(&(Integer.parse(&1.release_date)))
     |> Enum.reverse()
   end
 

@@ -1,21 +1,11 @@
 # MarvelSchedule
 
-**TODO: Add description**
-
-## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `marvel_schedule` to your list of dependencies in `mix.exs`:
+Run it by hand for the moment...
 
 ```elixir
-def deps do
-  [
-    {:marvel_schedule, "~> 0.1.0"}
-  ]
-end
+MarvelSchedule.generate_viewing_schedule("2019-05-03") 
+|> Tuple.to_list() 
+|> Enum.at(0) 
+|> MarvelScheduler.Formatters.VCalender.format() 
+|> Stream.into(File.stream!("marvel-release-order.vcf", [:write, :utf8])) |> Stream.run
 ```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/marvel_schedule](https://hexdocs.pm/marvel_schedule).
-
